@@ -36,8 +36,6 @@ class NetworkController {
     
     static func performRequestForURL(url: NSURL, httpMethod: HTTPMethod, urlParameters: [String : String]? = nil, body: NSData? = nil, completion: ((data: NSData?, error: NSError?) -> Void)?) {
         
-        print("[NetworkController.performRequestForURL(...)]")
-        
         // Process base URL and parameters
         
         let requestURL = urlFromParameters(url, urlParameters: urlParameters)
@@ -75,8 +73,6 @@ class NetworkController {
     }
     
     static func urlFromParameters(url: NSURL, urlParameters: [String : String]?) -> NSURL {
-        
-        print("[NetworkController.urlFromParameters(...)]")
         
         let components = NSURLComponents(URL: url, resolvingAgainstBaseURL: true)
         

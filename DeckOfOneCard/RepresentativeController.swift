@@ -20,8 +20,6 @@ class RepresentativeController {
     
     static func getRepresentativesByState(state: String, completion: ((representatives: [Representative]) -> Void)) {
         
-        print("[RepresentativeController.getRepresentativesByState(...)]")
-        
         // Unwrap our base URL
         
         guard let url = baseURL else { fatalError("URL optional is nil") }
@@ -30,21 +28,11 @@ class RepresentativeController {
         
         NetworkController.performRequestForURL(url, httpMethod: .Get, urlParameters: urlParameters) { (data, error) in
             
-            print("[RepresentativeController.getRepresentativesByState(...) { closure }]")
-            print("\turl = \(url)")
-            
             if let data = data
                 , responseDataString = NSString(data: data, encoding: NSUTF8StringEncoding)  {
                 
                 guard let jsonDictionary = ( try? NSJSONSerialization.JSONObjectWithData(data, options: []) ) as? [String : AnyObject], resultsArrayOfDictionaries = jsonDictionary[resultsKey] as? [[String : AnyObject]] else {
                 
-//                guard let jsonDictionary = ( try? NSJSONSerialization.JSONObjectWithData(data, options: []) ) as? [String : AnyObject] else {
-//                    
-//                    print("There was a problem trying to create jsonDictionary")
-//                    return
-//                }
-//                
-//                guard let resultsArrayOfDictionaries = jsonDictionary[resultsKey] as? [[String : AnyObject]] else {
                 
                     print("Unable to serialize JSON.  \nresponseDataString = \(responseDataString)")
                     completion(representatives: [])
