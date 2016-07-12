@@ -16,6 +16,9 @@
 		1F41C3611D34055D00A4DB71 /* CardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F41C3601D34055D00A4DB71 /* CardController.swift */; };
 		1F41C3631D34098400A4DB71 /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F41C3621D34098400A4DB71 /* NetworkController.swift */; };
 		1F41C3671D341A3700A4DB71 /* ImageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F41C3661D341A3700A4DB71 /* ImageController.swift */; };
+		1F8EE1571D3442F500605C03 /* Representative.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8EE1561D3442F500605C03 /* Representative.swift */; };
+		1F8EE1591D34442800605C03 /* RepresentativeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8EE1581D34442800605C03 /* RepresentativeController.swift */; };
+		1F8EE15B1D3444F200605C03 /* RepresentativeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8EE15A1D3444F200605C03 /* RepresentativeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +33,9 @@
 		1F41C3601D34055D00A4DB71 /* CardController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardController.swift; sourceTree = "<group>"; };
 		1F41C3621D34098400A4DB71 /* NetworkController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkController.swift; sourceTree = "<group>"; };
 		1F41C3661D341A3700A4DB71 /* ImageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageController.swift; sourceTree = "<group>"; };
+		1F8EE1561D3442F500605C03 /* Representative.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Representative.swift; sourceTree = "<group>"; };
+		1F8EE1581D34442800605C03 /* RepresentativeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepresentativeController.swift; sourceTree = "<group>"; };
+		1F8EE15A1D3444F200605C03 /* RepresentativeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepresentativeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +84,7 @@
 			isa = PBXGroup;
 			children = (
 				1F41C35D1D34035400A4DB71 /* Card.swift */,
+				1F8EE1561D3442F500605C03 /* Representative.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -88,6 +95,7 @@
 				1F41C3621D34098400A4DB71 /* NetworkController.swift */,
 				1F41C3601D34055D00A4DB71 /* CardController.swift */,
 				1F41C3661D341A3700A4DB71 /* ImageController.swift */,
+				1F8EE1581D34442800605C03 /* RepresentativeController.swift */,
 			);
 			name = ModelController;
 			sourceTree = "<group>";
@@ -96,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				1F41C35B1D33FF5400A4DB71 /* CardViewController.swift */,
+				1F8EE15A1D3444F200605C03 /* RepresentativeViewController.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -171,11 +180,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F8EE15B1D3444F200605C03 /* RepresentativeViewController.swift in Sources */,
 				1F41C3631D34098400A4DB71 /* NetworkController.swift in Sources */,
 				1F41C35C1D33FF5400A4DB71 /* CardViewController.swift in Sources */,
 				1F41C3611D34055D00A4DB71 /* CardController.swift in Sources */,
+				1F8EE1571D3442F500605C03 /* Representative.swift in Sources */,
 				1F41C35E1D34035400A4DB71 /* Card.swift in Sources */,
 				1F41C34A1D33FE7700A4DB71 /* AppDelegate.swift in Sources */,
+				1F8EE1591D34442800605C03 /* RepresentativeController.swift in Sources */,
 				1F41C3671D341A3700A4DB71 /* ImageController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -328,6 +340,7 @@
 				1F41C35A1D33FE7700A4DB71 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

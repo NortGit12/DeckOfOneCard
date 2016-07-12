@@ -36,11 +36,23 @@ class NetworkController {
     
     static func performRequestForURL(url: NSURL, httpMethod: HTTPMethod, urlParameters: [String : String]? = nil, body: NSData? = nil, completion: ((data: NSData?, error: NSError?) -> Void)?) {
         
-        // 
+        print("[NetworkController.performRequestForURL(...)]")
+        
+        // Process base URL and parameters
         
         let requestURL = urlFromParameters(url, urlParameters: urlParameters)
         
-        let request = NSMutableURLRequest(URL: requestURL)
+        // Append the json string to the end
+        
+        let jsonStringAdded = "\(requestURL)&output=json"
+                
+        guard let jsonRequestURL = NSURL(string: jsonStringAdded) else { return }
+        
+        // Finish configuring the request
+        
+//        let request = NSMutableURLRequest(URL: requestURL)
+        let request = NSMutableURLRequest(URL: jsonRequestURL)
+        
         request.HTTPMethod = httpMethod.rawValue
         request.HTTPBody = body
         
@@ -63,6 +75,8 @@ class NetworkController {
     }
     
     static func urlFromParameters(url: NSURL, urlParameters: [String : String]?) -> NSURL {
+        
+        print("[NetworkController.urlFromParameters(...)]")
         
         let components = NSURLComponents(URL: url, resolvingAgainstBaseURL: true)
         
