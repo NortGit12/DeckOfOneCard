@@ -26,7 +26,7 @@ class CardController {
         
         let urlParameters = ["count": "\(numberOfCards)"]
         
-        NetworkController.performRequestForURL(url, httpMethod: .Get, urlParameters: urlParameters) { (data, error) in
+        NetworkController.performRequestForURL(url, httpMethod: .Get, urlParameters: urlParameters, jsonSuffix: nil) { (data, error) in
             
             if let data = data
             , responseDataString = NSString(data: data, encoding: NSUTF8StringEncoding)  {

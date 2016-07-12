@@ -34,22 +34,27 @@ class NetworkController {
     
     // MARK: - Method(s)
     
-    static func performRequestForURL(url: NSURL, httpMethod: HTTPMethod, urlParameters: [String : String]? = nil, body: NSData? = nil, completion: ((data: NSData?, error: NSError?) -> Void)?) {
+    static func performRequestForURL(url: NSURL, httpMethod: HTTPMethod, urlParameters: [String : String]? = nil, jsonSuffix: String?, body: NSData? = nil, completion: ((data: NSData?, error: NSError?) -> Void)?) {
         
         // Process base URL and parameters
         
-        let requestURL = urlFromParameters(url, urlParameters: urlParameters)
+        var requestURL = urlFromParameters(url, urlParameters: urlParameters)
         
         // Append the json string to the end
         
-        let jsonStringAdded = "\(requestURL)&output=json"
-                
-        guard let jsonRequestURL = NSURL(string: jsonStringAdded) else { return }
+        if let jsonSuffix = jsonSuffix {
+            
+            let jsonStringAdded = "\(requestURL)\(jsonSuffix)"
+            
+            guard let jsonRequestURL = NSURL(string: jsonStringAdded) else { return }
+            
+            requestURL = jsonRequestURL
+            
+        }
         
         // Finish configuring the request
         
-//        let request = NSMutableURLRequest(URL: requestURL)
-        let request = NSMutableURLRequest(URL: jsonRequestURL)
+        let request = NSMutableURLRequest(URL: requestURL)
         
         request.HTTPMethod = httpMethod.rawValue
         request.HTTPBody = body

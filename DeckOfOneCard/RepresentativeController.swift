@@ -15,6 +15,7 @@ class RepresentativeController {
     static let baseURL = NSURL(string: "http://whoismyrepresentative.com/getall_reps_bystate.php")
     
     static private let resultsKey = "results"
+    static private let jsonSuffix = "&output=json"
     
     // MARK: - Method(s)
     
@@ -26,7 +27,7 @@ class RepresentativeController {
         
         let urlParameters = ["state": "\(state)"]
         
-        NetworkController.performRequestForURL(url, httpMethod: .Get, urlParameters: urlParameters) { (data, error) in
+        NetworkController.performRequestForURL(url, httpMethod: .Get, urlParameters: urlParameters, jsonSuffix: jsonSuffix) { (data, error) in
             
             if let data = data
                 , responseDataString = NSString(data: data, encoding: NSUTF8StringEncoding)  {

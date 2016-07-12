@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Ny9-ud-O0t">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -18,26 +19,47 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5Kf-u5-f0t">
+                                <rect key="frame" x="20" y="48" width="560" height="544"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="5Kf-u5-f0t" secondAttribute="height" multiplier="35:34" id="FD7-GN-JdP"/>
+                                </constraints>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="43A-mG-q1c">
-                                <rect key="frame" x="247" y="12" width="107" height="30"/>
+                                <rect key="frame" x="20" y="10" width="560" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="8kI-8Y-DJL"/>
+                                    <constraint firstAttribute="width" constant="107" id="rbC-cI-gwf"/>
+                                </constraints>
                                 <state key="normal" title="Draw New Card"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="rbC-cI-gwf"/>
+                                    </mask>
+                                </variation>
                                 <connections>
                                     <action selector="drawButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WUf-4Q-bbc"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5Kf-u5-f0t">
-                                <rect key="frame" x="20" y="50" width="560" height="542"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="43A-mG-q1c" firstAttribute="centerX" secondItem="5Kf-u5-f0t" secondAttribute="centerX" id="CI9-2R-89i"/>
+                            <constraint firstItem="5Kf-u5-f0t" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="4fh-yy-jeG"/>
+                            <constraint firstItem="43A-mG-q1c" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="BGB-kW-sOL"/>
                             <constraint firstItem="5Kf-u5-f0t" firstAttribute="top" secondItem="43A-mG-q1c" secondAttribute="bottom" constant="8" symbolic="YES" id="CUT-rz-hhW"/>
+                            <constraint firstItem="5Kf-u5-f0t" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="H4w-6Q-63G"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="5Kf-u5-f0t" secondAttribute="bottom" constant="8" id="KqR-Db-Llc"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="5Kf-u5-f0t" secondAttribute="bottom" constant="8" symbolic="YES" id="Psq-UO-tub"/>
-                            <constraint firstItem="5Kf-u5-f0t" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="XC2-zY-d5i"/>
-                            <constraint firstItem="43A-mG-q1c" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="12" id="iQ0-Ek-x0T"/>
-                            <constraint firstItem="5Kf-u5-f0t" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="kNL-RY-OcH"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="43A-mG-q1c" secondAttribute="trailing" id="Rnk-3h-Muf"/>
+                            <constraint firstItem="43A-mG-q1c" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="10" id="dsG-tf-bRp"/>
+                            <constraint firstItem="5Kf-u5-f0t" firstAttribute="top" secondItem="43A-mG-q1c" secondAttribute="bottom" constant="8" id="pvl-UF-1LZ"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="CUT-rz-hhW"/>
+                                <exclude reference="Psq-UO-tub"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="cardImageView" destination="5Kf-u5-f0t" id="WPv-N9-2q6"/>

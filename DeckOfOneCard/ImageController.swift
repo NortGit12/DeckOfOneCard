@@ -16,7 +16,7 @@ class ImageController {
         
         guard let url = NSURL(string: url) else { fatalError("Image URL optional is nil") }
         
-        NetworkController.performRequestForURL(url, httpMethod: .Get) { (data, error) in
+        NetworkController.performRequestForURL(url, httpMethod: .Get, jsonSuffix: nil) { (data, error) in
             
             guard let data = data else {
                 
